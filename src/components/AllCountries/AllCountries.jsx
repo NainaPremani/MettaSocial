@@ -3,6 +3,7 @@ import { apiURL } from "../util/api";
 import SearchInput from "../Search/SearchInput";
 
 import { Link } from "react-router-dom";
+import { RotatingTriangles } from "react-loader-spinner";
 
 const AllCountries = () => {
   const [countries, setCountries] = useState([]);
@@ -28,9 +29,9 @@ const AllCountries = () => {
     }
   };
 
-  const getCountryByName = async (countryName) => {
+  const getCountryByCurrency = async (currency) => {
     try {
-      const res = await fetch(`${apiURL}/name/${countryName}`);
+      const res = await fetch(`${apiURL}/currency/${currency}`);
 
       if (!res.ok) throw new Error("Not found any country!");
 
@@ -52,12 +53,21 @@ const AllCountries = () => {
     <div className="all__country__wrapper">
       <div className="country__top">
         <div className="search">
-          <SearchInput onSearch={getCountryByName} />
+          <SearchInput onSearch={getCountryByCurrency} />
         </div>
       </div>
 
       <div className="country__bottom">
-        {isLoading && !error && <h4>Loading........</h4>}
+        {isLoading && !error && (
+          <RotatingTriangles
+            visible={true}
+            height="80"
+            width="80"
+            ariaLabel="rotating-triangels-loading"
+            wrapperStyle={{}}
+            wrapperClass="rotating-triangels-wrapper"
+          />
+        )}
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { apiURL } from "../util/api";
 import { Link } from "react-router-dom";
+import { RotatingTriangles } from "react-loader-spinner";
 
 const CountryInfo = () => {
   const [country, setCountry] = useState([]);
@@ -38,7 +39,16 @@ const CountryInfo = () => {
         <Link to="/">Back</Link>
       </button>
 
-      {isLoading && !error && <h4>Loading........</h4>}
+      {isLoading && !error && (
+        <RotatingTriangles
+          visible={true}
+          height="100"
+          width="100"
+          ariaLabel="rotating-triangels-loading"
+          wrapperStyle={{}}
+          wrapperClass="rotating-triangels-wrapper"
+        />
+      )}
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (
