@@ -58,16 +58,18 @@ const AllCountries = () => {
       </div>
 
       <div className="country__bottom">
-        {isLoading && !error && (
-          <RotatingTriangles
-            visible={true}
-            height="80"
-            width="80"
-            ariaLabel="rotating-triangels-loading"
-            wrapperStyle={{}}
-            wrapperClass="rotating-triangels-wrapper"
-          />
-        )}
+        <div className="rotating-triangels-wrapper">
+          {isLoading && !error && (
+            <RotatingTriangles
+              visible={true}
+              height="80"
+              width="80"
+              ariaLabel="rotating-triangels-loading"
+              wrapperStyle={{}}
+              wrapperClass="rotating-triangels-wrapper"
+            />
+          )}
+        </div>
         {error && !isLoading && <h4>{error}</h4>}
 
         {countries?.map((country) => (

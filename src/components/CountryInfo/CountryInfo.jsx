@@ -39,16 +39,18 @@ const CountryInfo = () => {
         <Link to="/">Back</Link>
       </button>
 
-      {isLoading && !error && (
-        <RotatingTriangles
-          visible={true}
-          height="100"
-          width="100"
-          ariaLabel="rotating-triangels-loading"
-          wrapperStyle={{}}
-          wrapperClass="rotating-triangels-wrapper"
-        />
-      )}
+      <div className="rotating-triangels-wrapper">
+        {isLoading && !error && (
+          <RotatingTriangles
+            visible={true}
+            height="100"
+            width="100"
+            ariaLabel="rotating-triangels-loading"
+            wrapperStyle={{}}
+            wrapperClass="rotating-triangels-wrapper"
+          />
+        )}
+      </div>
       {error && !isLoading && { error }}
 
       {country?.map((country, index) => (

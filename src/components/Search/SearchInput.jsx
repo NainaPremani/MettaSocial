@@ -13,7 +13,7 @@ const SearchInput = ({ onSearch }) => {
     <form onSubmit={submitHandler}>
       <input
         type="text"
-        placeholder="Search By Currency eg. INR,EUR and hit Enter"
+        placeholder="Enter a currency code (e.g., INR, EUR) and press Enter to search"
         value={input.toUpperCase()}
         onChange={(e) => setInput(e.target.value)}
       />
