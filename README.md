@@ -16,9 +16,8 @@ I've developed a simple yet effective web page that includes a user-friendly sea
 3. Responsive Design:
     The web page is designed to be responsive, ensuring a seamless experience across various devices and screen sizes.
    
-5. Stylish UI:
+5. UI:
     The user interface is crafted for clarity and simplicity.
-    Thoughtful color schemes and typography contribute to an aesthetically pleasing design.
    
 6. Loader for Smooth Interaction:
     To enhance the user experience, a loader is implemented, ensuring that users are aware of ongoing processes during searches.
