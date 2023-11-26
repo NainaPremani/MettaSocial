@@ -35,13 +35,13 @@ To run the WorldOfCurrency locally, follow these steps:
 1. Clone the repository:
 
    ```
-   git clone https://github.com/NainaPremani/MettaSocial.git
+   git clone https://github.com/NainaPremani/WorldOfCurrency.git
    ```
 
 2. Navigate to the project directory:
 
    ```
-   cd MettaSocial/
+   cd WorldOfCurrency
    ```
 
 3. Install the required dependencies:
